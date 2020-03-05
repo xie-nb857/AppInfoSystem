@@ -1,19 +1,19 @@
 package cn.appsys.pojo;
 
-import javax.xml.crypto.Data;
+import java.util.Date;
 
 public class DevUser {
-	  private Integer id;
-	  private String devCode;
-	  private String devName;
-	  private String devPassword;
-	  private String devEmail;
-	  private String devInfo;
-	  private Integer createdBy;
-	  private Data creationDate;
-	  private Integer modifyBy;
-	  private Data modifyDate;
-	  public Integer getId() {
+	private Integer id;           //开发者用户id
+	private String devCode;       //开发者编码
+	private String devName;       //开发者姓名 
+	private String devPassword;   //开发者密码 
+	private String devEmail;      //开发者电子邮箱
+	private String devInfo;       //开发者简介
+	private Integer createdBy;    //创建者（来源于backend_user用户表的用户id）
+	private Date creationDate;    //创建时间
+	private Integer modifyBy;     //更新者（来源于backend_user用户表的用户id）
+	private Date modifyDate;      //最新更新时间
+	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
@@ -55,10 +55,10 @@ public class DevUser {
 	public void setCreatedBy(Integer createdBy) {
 		this.createdBy = createdBy;
 	}
-	public Data getCreationDate() {
+	public Date getCreationDate() {
 		return creationDate;
 	}
-	public void setCreationDate(Data creationDate) {
+	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
 	public Integer getModifyBy() {
@@ -67,11 +67,10 @@ public class DevUser {
 	public void setModifyBy(Integer modifyBy) {
 		this.modifyBy = modifyBy;
 	}
-	public Data getModifyDate() {
+	public Date getModifyDate() {
 		return modifyDate;
 	}
-	public void setModifyDate(Data modifyDate) {
+	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-
 }

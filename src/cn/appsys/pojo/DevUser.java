@@ -10,9 +10,6 @@ public class DevUser {
 	private String devEmail;      //开发者电子邮箱
 	private String devInfo;       //开发者简介
 	private Integer createdBy;    //创建者（来源于backend_user用户表的用户id）
-	private Date creationDate;    //创建时间
-	private Integer modifyBy;     //更新者（来源于backend_user用户表的用户id）
-	private Date modifyDate;      //最新更新时间
 	public Integer getId() {
 		return id;
 	}
@@ -73,4 +70,8 @@ public class DevUser {
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
+	private Date creationDate;    //创建时间
+	private Integer modifyBy;     //更新者（来源于backend_user用户表的用户id）
+	private Date modifyDate;      //最新更新时间
+	
 }

@@ -16,11 +16,6 @@ public class BackendServiceImpl implements BackendService {
 	private BackendMapper backendMapper;
 	
 	
-	
-	
-	
-	
-	
 	@Override
 	public BackendUser login(String userCode) {
 		return backendMapper.getBackendByCode(userCode);

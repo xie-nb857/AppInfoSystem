@@ -1,7 +1,6 @@
 package cn.appsys.controller.backend;
 
 import javax.annotation.Resource;
-import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

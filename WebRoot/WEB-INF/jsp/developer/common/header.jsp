@@ -55,7 +55,7 @@
 						</div>
 						<div class="profile_info">
 							<span>Welcome,</span>
-							<h2>${devUserSession.devCode }</h2>
+							<h2>${devUserSession.devCode}</h2>
 						</div>
 					</div>
 					<!-- /menu profile quick info -->

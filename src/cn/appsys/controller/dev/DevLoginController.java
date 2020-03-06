@@ -36,8 +36,8 @@ public class DevLoginController {
 			//判断
 			if(devuser.getDevPassword().equals(devPassword)){
 				//登陆成功session保存
-				session.setAttribute("userSession", devuser);
-				return "/backend/main";
+				session.setAttribute("devUserSession", devuser);
+				return "/developer/main";
 			}else{
 				//登录失败加提示
 				request.setAttribute("error", "用户名或密码错误");

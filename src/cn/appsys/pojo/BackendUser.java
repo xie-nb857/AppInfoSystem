@@ -11,7 +11,7 @@ public class BackendUser {
 	private Date creationDate;         //创建时间
 	private Integer modifyBy;         //更新者（来源于backend_user用户表的用户id）
 	private Date modifyDate;          //最新更新时间
-	private String userPasswor;      //用户密码
+	private String userPassword;      //用户密码
 	
 	public Integer getId() {
 		return id;
@@ -61,10 +61,10 @@ public class BackendUser {
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-	public String getUserPasswor() {
-		return userPasswor;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setUserPasswor(String userPasswor) {
-		this.userPasswor = userPasswor;
+	public void setUserPassword(String userPasswor) {
+		this.userPassword = userPasswor;
 	}
 }

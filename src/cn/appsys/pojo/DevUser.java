@@ -3,13 +3,17 @@ package cn.appsys.pojo;
 import java.util.Date;
 
 public class DevUser {
-	private Integer id;           //开发者用户id
-	private String devCode;       //开发者编码
-	private String devName;       //开发者姓名 
-	private String devPassword;   //开发者密码 
-	private String devEmail;      //开发者电子邮箱
-	private String devInfo;       //开发者简介
-	private Integer createdBy;    //创建者（来源于backend_user用户表的用户id）
+	private Integer id;//主键id
+	private String devCode;//开发者帐号(系统登录账号)
+	private String devName;//开发者名称
+	private String devPassword;//开发者密码
+	private String devEmail;//开发者邮箱
+	private String devInfo;	//开发者简介
+	private Integer createdBy;//创建者
+	private Date creationDate;//创建时间
+	private Integer modifyBy;//更新者
+	private Date modifyDate;//更新时间
+	
 	public Integer getId() {
 		return id;
 	}
@@ -70,8 +74,5 @@ public class DevUser {
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-	private Date creationDate;    //创建时间
-	private Integer modifyBy;     //更新者（来源于backend_user用户表的用户id）
-	private Date modifyDate;      //最新更新时间
 	
 }

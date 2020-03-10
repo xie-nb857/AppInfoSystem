@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.appsys.pojo.BackendUser;
 import cn.appsys.service.backend.BackendService;
+import cn.appsys.tools.Constants;
 
 @Controller
 @RequestMapping("/manager")
@@ -34,7 +35,7 @@ public class BackendLoginController {
 		//判断
 		if(user.getUserPassword().equals(userPassword)){
 			//登陆成功session保存
-			session.setAttribute("userSession", user);
+			session.setAttribute(Constants.USER_SESSION, user);
 			return "/backend/main";
 		}else{
 			//登录失败加提示

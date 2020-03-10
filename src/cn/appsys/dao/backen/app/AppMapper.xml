@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.appsys.dao.backen.app.AppMapper">
+	<!-- 查询全部记录方法 -->
+	<select id="getAppCount" resultType="int">
+		SELECT COUNT(1) 
+		FORM app_info a
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="softwareName!=null and softwareName!=''">
+				and softwareName LIKE CONCAT('%',#{appInfo.softwareName},'%')
+			</if>
+			<if test="status != null">
+				and a.status = #{appInfo.status}
+			</if>
+			<if test="flatformId != null">
+				and a.flatformId = #{appInfo.flatformId}
+			</if>
+			<if test="categoryLevel1 != null">
+				and a.categoryLevel1 = #{appInfo.categoryLevel1}
+			</if>
+			<if test="categoryLevel2 != null">
+				and a.categoryLevel2 = #{appInfo.categoryLevel2}
+			</if>
+			<if test="categoryLevel3 != null">
+				and a.categoryLevel3 = #{appInfo.categoryLevel3}
+			</if>
+			<if test="devId != null">
+				and a.devId = #{appInfo.devId}
+			</if>
+		</trim>
+	</select>
+	
+	<!-- 分页查询app信息 -->
+	<select id="getAppByPage" resultType="AppInfo">
+		SELECT a.*,
+		(SELECT devName FROM dev_user WHERE id = a.id) as devName,
+		(SELECT categoryName FROM app_category WHERE id=a.categoryLevel1) as categoryLevel1Name,
+		(SELECT categoryName FROM app_category WHERE id=a.categoryLevel2) as categoryLevel2Name,
+		(SELECT categoryName FROM app_category WHERE id=a.categoryLevel3) as categoryLevel3Name,
+		(SELECT valueName FROM data_dictionary WHERE valueId=a.status AND typeCode="APP_STATUS") as statusName,
+		(SELECT valueName FROM data_dictionary WHERE valueId=a.flatformId AND typeCode="APP_FLATFORM") as flatformName
+		FORM app_info as a
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="softwareName!=null and softwareName!=''">
+				and softwareName LIKE CONCAT('%',#{softwareName},'%')
+			</if>
+			<if test="status != null">
+				and a.status = #{status}
+			</if>
+			<if test="flatformId != null">
+				and a.flatformId = #{flatformId}
+			</if>
+			<if test="categoryLevel1 != null">
+				and a.categoryLevel1 = #{categoryLevel1}
+			</if>
+			<if test="categoryLevel2 != null">
+				and a.categoryLevel2 = #{categoryLevel2}
+			</if>
+			<if test="categoryLevel3 != null">
+				and a.categoryLevel3 = #{categoryLevel3}
+			</if>
+			<if test="devId != null">
+				and a.devId = #{devId}
+			</if>
+		</trim>
+		ORDER BY creationDate DESC
+		LIMIT #{start},#{size}
+	</select>
+</mapper>

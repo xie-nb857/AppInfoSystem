@@ -65,13 +65,14 @@
 	</property>
 </bean>
 
-<!-- 配置interceptors -->
-<!-- <mvc:interceptors>
+<!-- 配置interceptors拦截器-->
+<mvc:interceptors>
 	<mvc:interceptor>
-		<mvc:mapping path="/sys/**"/>
+		<mvc:mapping path="/manager/backend/**"/>
+		<mvc:mapping path="/dev/flatform/**"/>
 		<bean class="cn.appsys.interceptor.SysInterceptor"/>
 	</mvc:interceptor>
-</mvc:interceptors> -->
+</mvc:interceptors>
 
 <!-- 配置文件上传 -->
 <bean id="multiparResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

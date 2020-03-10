@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.appsys.pojo.DevUser;
 import cn.appsys.service.backend.DevService;
+import cn.appsys.tools.Constants;
 
 
 @Controller
@@ -36,7 +37,7 @@ public class DevLoginController {
 			//判断
 			if(devuser.getDevPassword().equals(devPassword)){
 				//登陆成功session保存
-				session.setAttribute("devUserSession", devuser);
+				session.setAttribute(Constants.DEV_USER_SESSION, devuser);
 				return "/developer/main";
 			}else{
 				//登录失败加提示
